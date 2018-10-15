@@ -1,8 +1,9 @@
 {
   "name": "react-ratio-placeholder",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A React component for fully responsive, aspect-ratio maintaining elements",
   "main": "lib/index.js",
+  "license": "MIT",
   "scripts": {
     "prepublish": "yarn build",
     "build": "babel src -d lib",
@@ -10,7 +11,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
   "dependencies": {
     "@babel/preset-env": "^7.1.0",
     "object-assign": "^4.0.0",
