@@ -1,9 +1,10 @@
 {
   "name": "react-ratio-placeholder",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A React component for fully responsive, aspect-ratio maintaining elements",
   "main": "lib/index.js",
   "scripts": {
+    "prepublish": "yarn build",
     "build": "babel src -d lib",
     "test": "budo test/test.js --live -d test -- -t babelify | garnish"
   },
@@ -17,6 +18,7 @@
     "react-dom": "^15.3.0 || ^16.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babelify": "^10.0.0",
