@@ -1,6 +1,6 @@
 {
   "name": "react-ratio-placeholder",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "A React component for fully responsive, aspect-ratio maintaining elements",
   "main": "lib/index.js",
   "license": "MIT",
