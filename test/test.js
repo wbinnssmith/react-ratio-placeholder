@@ -11,6 +11,10 @@ class App extends React.Component {
           style={{ marginBottom: "10px", backgroundColor: "blue" }}
         />
         <RatioPlaceholder
+          ratio={1.778}
+          style={{ marginBottom: "10px", backgroundColor: "lightseagreen" }}
+        />
+        <RatioPlaceholder
           width="500"
           height="500"
           style={{ marginBottom: 10, backgroundColor: "red" }}

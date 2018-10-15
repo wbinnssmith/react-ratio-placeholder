@@ -3,8 +3,10 @@ import assign from "object-assign";
 
 function spacerStyle(props) {
   let w, h;
-  if (props.ratio) {
+  if (typeof props.ratio === "string") {
     [w, h] = props.ratio.split(":");
+  } else if (typeof props.ratio === "number") {
+    [w, h] = [props.ratio, 1];
   } else if (props.width && props.height) {
     [w, h] = [props.width, props.height];
   } else {
@@ -24,17 +26,19 @@ export default class RatioPlaceholder extends React.PureComponent {
     const { children, ...props } = this.props;
     return (
       <div className="RatioPlaceholder" {...props} style={spacerStyle(props)}>
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%"
-          }}
-        >
-          {children}
-        </div>
+        {children == null ? null : (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%"
+            }}
+          >
+            {children}
+          </div>
+        )}
       </div>
     );
   }
