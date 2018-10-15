@@ -12,7 +12,6 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@babel/preset-env": "^7.1.0",
     "object-assign": "^4.0.0",
     "react": "^15.3.0 || ^16.0.0",
     "react-dom": "^15.3.0 || ^16.0.0"
@@ -20,6 +19,7 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babelify": "^10.0.0",
     "browserify": "^16.0.0",
