@@ -1,35 +1,41 @@
-import React from 'react';
-import isEqual from 'lodash.isequal';
-import assign from 'object-assign';
+import React from "react";
+import assign from "object-assign";
 
 function spacerStyle(props) {
   let w, h;
   if (props.ratio) {
-    [w, h] = props.ratio.split(':');
+    [w, h] = props.ratio.split(":");
   } else if (props.width && props.height) {
     [w, h] = [props.width, props.height];
   } else {
-    throw new Error('RatioPlaceholder requires either a ratio property of "w:h" or width and height properties');
+    throw new Error(
+      'RatioPlaceholder requires either a ratio property of "w:h" or width and height properties'
+    );
   }
 
-  return assign({
-    backgroundColor: props.color || '#ccc',
-    paddingBottom: (h / w * 100) + '%'
-  }, props.style);
+  return assign(props.style || {}, {
+    paddingBottom: (h / w) * 100 + "%",
+    position: "relative"
+  });
 }
 
-export default class RatioPlaceholder extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  shouldComponentUpdate(newProps) {
-    return !isEqual(newProps, this.props);
-  }
-
+export default class RatioPlaceholder extends React.PureComponent {
   render() {
+    const { children, ...props } = this.props;
     return (
-      <div className="RatioPlaceholder" style={spacerStyle(this.props)} />
-    )
+      <div className="RatioPlaceholder" {...props} style={spacerStyle(props)}>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%"
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    );
   }
 }
